@@ -11,5 +11,6 @@ $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName, $port);
 
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
+    echo "No se encuentra Base de Datos"; 
 }
 ?>
