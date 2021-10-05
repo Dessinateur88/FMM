@@ -1,6 +1,6 @@
 <?php 
  /*require 'conexion.php';*/
- include('/conexion.php');
+ include('conexion.php');
  
 session_start();
  if($_POST){
@@ -82,7 +82,7 @@ session_start();
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Acceso</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Acceso1</h1>
                                     </div>
                                     <form class="user" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                         <div class="form-group">
