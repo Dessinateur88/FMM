@@ -68,7 +68,7 @@ $rowCount = $query->num_rows;
     <?php
     if($rowCount > 0){
         while($row = $query->fetch_assoc()){ 
-            echo '<option value="'.$row['country_id'].'">'.$row['country_name'].'</option>';
+            echo '<option value="'.$row['country_id'].'">'.$row['ID_Codigo_Postal'].'</option>';
         }
     }else{
         echo '<option value="">Country not available</option>';
