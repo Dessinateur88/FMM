@@ -1,19 +1,20 @@
 <?php
 //Include database configuration file
-include('dbConfig.php');
+include('../conexion.php');
 
-if(isset($_POST["country_id"]) && !empty($_POST["country_id"])){
-    //Get all state data
-    $query = $db->query("SELECT * FROM states WHERE country_id = ".$_POST['country_id']."  ORDER BY state_name ASC");
+//CP LANZA LAS COLONIAS
+if(isset($_POST["cp_id"]) && !empty($_POST["cp_id"])){
+    //SELECCIONAR LOS ESTADOS
+    $query = $db->query("SELECT * FROM asentamiento WHERE ID_Codigo_Postal = ".$_POST['cp_id ']."  ORDER BY state_name ASC");
     
-    //Count total number of rows
+    //CONTAR EL TOTAL DE FILAS
     $rowCount = $query->num_rows;
     
-    //Display states list
+    //MOSTRAR LA LISTA DE LOS ESTADOS
     if($rowCount > 0){
         echo '<option value="">Select state</option>';
         while($row = $query->fetch_assoc()){ 
-            echo '<option value="'.$row['state_id'].'">'.$row['state_name'].'</option>';
+            echo '<option value="'.$row['ID_Municipio'].'">'.$row['Asentamiento'].'</option>';
         }
     }else{
         echo '<option value="">State not available</option>';

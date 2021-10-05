@@ -53,17 +53,18 @@ $(document).ready(function(){
 </script>
 
 <?php
+
 //Include database configuration file
-include('dbConfig.php');
+include('../conexion.php');
 
 //Get all country data
-$query = $db->query("SELECT * FROM countries ORDER BY country_name ASC");
+$query = $db->query("SELECT * FROM codigo_postal ORDER BY ID_Codigo_Postal ASC");
 
 //Count total number of rows
 $rowCount = $query->num_rows;
 ?>
 <select name="country" id="country">
-    <option value="">Selecciona un Pais</option>
+    <option value="">Selecciona un Codigo Postal</option>
     <?php
     if($rowCount > 0){
         while($row = $query->fetch_assoc()){ 
