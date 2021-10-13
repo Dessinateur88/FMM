@@ -8,7 +8,6 @@ $port = '3306';
 
 $mysqli = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName, $port);
 
-
 /*$dbHost = 'localhost';
 $dbUsername = 'root';
 $dbPassword = '';
@@ -27,3 +26,4 @@ if ($mysqli->connect_error) {
     echo "No se encuentra Base de Datos"; 
 }
 ?>
+
