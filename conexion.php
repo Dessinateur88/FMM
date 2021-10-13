@@ -1,16 +1,16 @@
 <?php
 
-/*$dbHost = 'fmm-test.mysql.database.azure.com';
+$dbHost = 'fmm-test.mysql.database.azure.com';
 $dbUsername = 'fmm@fmm-test';
 $dbPassword = '624UB8VWV61V7XS4$';
 $dbName = 'fmm';
-$port = '3306';¨*/
+$port = '3306';
 
-$dbHost = 'localhost';
+/*$dbHost = 'localhost';
 $dbUsername = 'root';
 $dbPassword = '';
 $dbName = 'fmm';
-$port = '';
+$port = '';*/
 
 $mysqli = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
