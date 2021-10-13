@@ -1,16 +1,19 @@
 <?php 
- /*require 'conexion.php';*/
- include('conexion.php');
- 
 session_start();
+include 'conexion.php';
+if (isset($_SESSION['nombre'])){
+
+    header("Location: inicio.php");
+};
+ 
+
  if($_POST){
 
      $usuario = $_POST['usuario'];
      $password = $_POST['password'];
-     
 
      $sql = "SELECT ID_Usuario, Password, Nombre, Apellido_Paterno FROM usuario WHERE ID_Usuario='$usuario'";
-     /*echo $sql;*/
+     echo $sql;
      $resultado = $mysqli -> query ($sql);
      $num = $resultado -> num_rows;
 
@@ -24,14 +27,12 @@ session_start();
                 $_SESSION['nombre']=$row['Nombre'];
                 $_SESSION['apellido_paterno']=$row['Apellido_Paterno'];
                 $_SESSION['id_usuario']=$row['ID_Usuario'];
-
                 header("Location: inicio.php");
-
             }     
-            else{
-                echo "La contraseña es incorrecta"; 
+            else{  
+             
                 
-
+                echo "La contraseña es incorrecta"; 
             }
 
     } else {
@@ -51,6 +52,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 
     <title>Fundación Michou y Mau - Login</title>
 
@@ -62,6 +64,7 @@ session_start();
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
+
 
 </head>
 
@@ -90,6 +93,7 @@ session_start();
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Ingresa tu usuario">
                                         </div>
+
                                         <div class="form-group">
                                             <input name = "password" type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Contraseña">
@@ -120,7 +124,7 @@ session_start();
                 
                 </div>
                 
-                <div class="text-center sidebar-brand-text fmm-black fmm-text-small">Sistema Modular de Seguimiento a Pacientes - Fundación Michou y Mau - Copyright &copy; 2021 </div>
+                <div class="text-center sidebar-brand-text fmm-black fmm-text-small">Sistema Modular de Atención a Pacientes - Fundación Michou y Mau - Copyright &copy; 2021 </div>
             </div>
 
         </div>
@@ -156,6 +160,9 @@ session_start();
             </div>
         </div>
     </div>
+
+
+
 
 </body>
 
