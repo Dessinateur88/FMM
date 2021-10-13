@@ -6,13 +6,16 @@ $dbPassword = '624UB8VWV61V7XS4$';
 $dbName = 'fmm';
 $port = '3306';
 
+$mysqli = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName, $port);
+
+
 /*$dbHost = 'localhost';
 $dbUsername = 'root';
 $dbPassword = '';
 $dbName = 'fmm';
-$port = '';*/
+$port = '';
 
-$mysqli = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+$mysqli = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);*/
 
 
 
